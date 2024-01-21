@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
@@ -11,6 +11,8 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import PublicIcon from '@mui/icons-material/Public';
 import iza from '../assets/liza3.png'
+import Login from '../components/login'
+
 
 
 const darkTheme = createTheme({
@@ -23,6 +25,10 @@ const darkTheme = createTheme({
 });
 
 export default function App() {
+  const [openLogin, setOpenLogin] = useState(false);
+  const handleLoginClick = () => {
+    setOpenLogin(true);
+  };
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
@@ -35,7 +41,7 @@ export default function App() {
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
           <Typography className='logoName' variant="h6" color="inherit"  sx={{ flexGrow: 1 }}>
-          LizaLearnAI
+          LizaLearn
           </Typography>
           <nav className='linksNavbar'>
             
@@ -50,8 +56,8 @@ export default function App() {
               <PublicIcon />
             </Link>
           </nav>
-          <Button className='loginButton' href="#" color='error' variant="outlined" sx={{ my: 1, mx: 1.5 }}>
-            Login
+          <Button onClick={handleLoginClick} className='loginButton' href="#" color='error' variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+            Log in
           </Button>
         </Toolbar>
       </AppBar>
@@ -78,7 +84,7 @@ export default function App() {
           </Grid>
         </Grid>
 
-
+     
         <Grid item xs={6} sm={6} md={6} mt={8}>
         <Grid container spacing={4} justifyContent="space-evenly">
          <img src={iza} alt="izarealescola" className='izaLogo'/>
@@ -87,6 +93,8 @@ export default function App() {
           </Grid>
        
       </Container>
+
+      <Login  open={openLogin} onClose={() => setOpenLogin(false)}  />
   
     </ThemeProvider>
   );
