@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Rock+Salt&display=swap');
+
+.logoName{
+  font-family: 'Gloria Hallelujah', cursive !important;
+  font-size: 1.65em !important;
+  color: #f56639 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.link{
+color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loginButton{
+  border-radius: 18px !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.izaLogo{
+  width: 350px;
+  height: 350px;
 }
 
-.App-link {
-  color: #61dafb;
+.description{
+  font-size: 1.1em !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.gridContainer{
+  @media screen and (max-width: 700px) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    
   }
 }
